@@ -21,30 +21,54 @@ const lowerCheck = document.getElementById("lowercase");
 const numberCheck = document.getElementById("numbers");
 const symbolCheck = document.getElementById("symbols");
 
-//Creating a empty string to which the characters will append and give the final password
-let password = "";
+// Create an input event listener for slider element
+slider.addEventListener("input", function () {
+    // Display the value of the slider
+    sliderNumber.textContent = `${slider.value}`;
+    // Assign to passwordLength new value
+    passwordLength = slider.value;
+});
 
 //creating a function to select random characters above mentioned set of strings
 function getRandomData(dataSet){
     return dataSet[Math.floor(Math.random() * dataSet.length)];
 }
 
+//Creating a empty string to which the characters will append and give the final password
+let password = "";
+
 //creating a function to append the random characters to get the final password
 function generatePassword(){
+
+    password = "";
+    
     for(let i=0;i<passwordLength;i++){
-        if(upperCheck.checked){
+        if(upperCheck.checked && lowerCheck.checked && numberCheck.checked && symbolCheck.checked){
+            let set = upperCase+lowerCase+numberSet+symbolSet;
+            password+=getRandomData(set);
+        }
+        else if(upperCheck.checked && lowerCheck.checked && numberCheck.checked){
+            let set = upperCase+lowerCase+numberSet;
+            password+=getRandomData(set);
+        }
+        else if(upperCheck.checked && lowerCheck.checked && symbolCheck.checked){
+            let set = upperCase+lowerCase+symbolSet;
+            password+=getRandomData(set);
+        }
+        else if (upperCheck.checked) {
             password += getRandomData(upperCase);
-        }
-        if(lowerCheck.checked){
-            password+=getRandomData(lowerCase);
-        }
-        if(numberCheck.checked){
-            password+=getRandomData(numberSet);
-        }
-        if(symbolCheck.checked){
-            password+=getRandomData(symbolSet);
+        } 
+        else if (lowerCheck.checked) {
+            password += getRandomData(lowerCase);
+        } 
+        else if (numberCheck.checked) {
+            password += getRandomData(numberSet);
+        } 
+        else if (symbolCheck.checked) {
+            password += getRandomData(symbolSet);
         }
     }
+    return password;
 }
 
 function changeColorPasswords(){
@@ -52,28 +76,29 @@ function changeColorPasswords(){
     let allPasswords = document.getElementsByClassName("generatedPassword");
     //changing the color to the css color variable
     for(let i=0;i<allPasswords.length;i++){
-        allPasswords[i].style.color = "var((--clr-bright-green)";
+        allPasswords[i].style.color = "var(--clr-bright-green)";
     }
 }
 
-//creating the variables to display the created passwords
-let pass1 = generatePassword();
-let pass2 = generatePassword();
-let pass3 = generatePassword();
-let pass4 = generatePassword();
-
 //Create a function to display the generated passwords
 function getGeneratedPasswords(){
-    password1El.innerHTML = `<input type="text" id="1" value="pass1" onclick="copyToClipboard(1)" readonly>
+
+    //creating the variables to display the created passwords
+    let pass1 = generatePassword();
+    let pass2 = generatePassword();
+    let pass3 = generatePassword();
+    let pass4 = generatePassword();
+    
+    password1El.innerHTML = `<input type="text" id="1" value= "${pass1}" onclick="copyToClipboard(1)" readonly>
     `;
 
-    password2El.innerHTML = `<input type="text" id="2" value="pass2" onclick="copyToClipboard(1)" readonly>
+    password2El.innerHTML = `<input type="text" id="2" value= "${pass2}" onclick="copyToClipboard(1)" readonly>
     `;
 
-    password3El.innerHTML = `<input type="text" id="3" value="pass3" onclick="copyToClipboard(1)" readonly>
+    password3El.innerHTML = `<input type="text" id="3" value= "${pass3}" onclick="copyToClipboard(1)" readonly>
     `;
 
-    password4El.innerHTML = `<input type="text" id="4" value="pass4" onclick="copyToClipboard(1)" readonly>
+    password4El.innerHTML = `<input type="text" id="4" value= "${pass4}" onclick="copyToClipboard(1)" readonly>
     `;
 
     changeColorPasswords();
@@ -88,11 +113,3 @@ function copyToClipboard(index){
         alert("Password copied to clipboard");
     });
 }
-
-// Create an input event listener for slider element
-slider.addEventListener("input", function () {
-    // Display the value of the slider
-    sliderNumber.textContent = `${slider.value}`;
-    // Assign to passwordLength new value
-    passwordLength = slider.value;
-});
