@@ -205,7 +205,7 @@ input {
 }
 
 /* Social Panel*/
-/*
+
 .social-panel-container{
     position: fixed;
 	right: 0;
@@ -213,7 +213,6 @@ input {
 	transform: translateX(100%);
 	transition: transform 0.4s ease-in-out;
 }
-*/
 
 .social-panel-container.visible {
 	transform: translateX(-10px);
@@ -298,4 +297,27 @@ input {
 .social-panel ul li a:hover {
 	border-color: #FF6A00;
 	box-shadow: 0 9px 12px -9px #FF6A00;
+}
+/*button styling*/
+.floating-btn {
+	border-radius: 26.5px;
+	background-color: #001F61;
+	border: 1px solid #001F61;
+	box-shadow: 0 16px 22px -17px #03153B;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 20px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+}
+.floating-btn:hover {
+	background-color: #ffffff;
+	color: #001F61;
+}
+.floating-btn:focus {
+	outline: none;
 }
