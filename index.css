@@ -147,3 +147,59 @@ main{
     align-items: left;
 }
 
+.downSection{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.generatedPassword {
+    background-color: var(--clr-dark-blue);
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+}
+
+input {
+    color: var(--clr-bright-green);
+    background-color: var(--clr-dark-blue);
+    border: none;
+    text-align: center;
+    padding: 0;
+    font-size: 1rem;
+    max-width: 15ch;
+}
+  
+  input[type="text"] {
+    cursor: pointer;
+}
+
+.fa-ellipsis-h {
+    color: var(--clr-very-dark-blue);
+}
+  
+  /* footer */
+  
+.attribution {
+    font-family: var(--ff-serif);
+    font-size: 11px;
+    text-align: center;
+}
+  
+.attribution a {
+    text-decoration: none;
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 520px) {
+    .container {
+      padding: 4em;
+    }
+  
+    .downSection {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+}
