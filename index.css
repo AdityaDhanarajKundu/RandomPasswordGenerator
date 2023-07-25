@@ -90,3 +90,60 @@ Setting the style of the generate password button
                 0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
                 0 32px 16px rgba(0, 0, 0, 0.09);
 }
+
+/* 
+styling the utility classes
+*/
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling the html components */
+
+main{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: min(90%, 33rem);
+    padding: 2em;
+    background-color: var(--clr-very-dark-blue);
+    border-radius: 0.25em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+                0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+                0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+/*slider styling*/
+#length-slider-text{
+    font-size: 0,95em;
+    color: var(--clr-medium-grey);
+}
+#slider-value{
+    font-family: var(--ff-main);
+    color: var(--clr-bright-green);
+}
+#slider{
+    display: block;
+    margin-top: 0.5em;
+}
+
+.fa-flash{
+    margin-right: 0.75em;
+}
+
+#letter-main{
+    text-transform: uppercase;
+}
+
+.settings-select{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+}
+
