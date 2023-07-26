@@ -92,13 +92,13 @@ function getGeneratedPasswords(){
     password1El.innerHTML = `<input type="text" id="1" value= "${pass1}" onclick="copyToClipboard(1)" readonly>
     `;
 
-    password2El.innerHTML = `<input type="text" id="2" value= "${pass2}" onclick="copyToClipboard(1)" readonly>
+    password2El.innerHTML = `<input type="text" id="2" value= "${pass2}" onclick="copyToClipboard(2)" readonly>
     `;
 
-    password3El.innerHTML = `<input type="text" id="3" value= "${pass3}" onclick="copyToClipboard(1)" readonly>
+    password3El.innerHTML = `<input type="text" id="3" value= "${pass3}" onclick="copyToClipboard(3)" readonly>
     `;
 
-    password4El.innerHTML = `<input type="text" id="4" value= "${pass4}" onclick="copyToClipboard(1)" readonly>
+    password4El.innerHTML = `<input type="text" id="4" value= "${pass4}" onclick="copyToClipboard(4)" readonly>
     `;
 
     changeColorPasswords();
