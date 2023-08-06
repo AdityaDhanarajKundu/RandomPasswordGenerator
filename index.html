@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 </head>
+
 <body>
     <main class="flex">
         <div class="container">
@@ -24,7 +26,9 @@
                 <input type="range" min="8" max="15" value="8" class="slider" id="slider" name="slider">
 
                 <!--adding the generate password button-->
-                <button class="btn" onclick="getGeneratedPasswords();"><i class="fa fa-flash"></i>Generate Password</button>
+                <button id="generate-button" class="btn" onclick="getGeneratedPasswords()"><i
+                        class="fa fa-flash"></i>Generate
+                    Password</button>
             </div>
 
             <div class="settings-select">
@@ -32,17 +36,17 @@
                     <label for="uppercase">Include uppercase letters</label>
                     <input type="checkbox" name="uppercase" id="uppercase" checked>
                 </div>
-    
+
                 <div class="settings">
                     <label for="lowercase">Include lowercase letters</label>
                     <input type="checkbox" name="lowercase" id="lowercase" checked>
                 </div>
-    
+
                 <div class="settings">
                     <label for="numbers">Include numbers</label>
                     <input type="checkbox" name="numbers" id="numbers" checked>
                 </div>
-    
+
                 <div class="settings">
                     <label for="symbols">Include symbols</label>
                     <input type="checkbox" name="symbols" id="symbols" checked>
@@ -50,7 +54,7 @@
             </div>
 
             <hr>
-            
+
             <!--this will show the generated passwords to choose from-->
             <div class="downSection">
                 <div class="generatedPassword" id="password1-el"><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
@@ -71,7 +75,7 @@
                 <p>Created with <i class="fa fa-heart"></i> by <span>Aditya Dhanraj Kundu</span></p>
                 <button class="close-btn"><i class="fas fa-times"></i></button>
                 <h4>GET IN TOUCH ON</h4>
-                
+
                 <ul>
                     <li>
                         <a href="https://twitter.com/dhanaraj_kundu" target="_blank">
@@ -109,4 +113,5 @@
 
     <script src="index.js"></script>
 </body>
+
 </html>
